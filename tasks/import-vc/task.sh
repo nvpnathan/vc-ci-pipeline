@@ -50,8 +50,8 @@ jq \
   --arg gateway "$VC_GATEWAY" \
   --arg dns "$VC_DNS_SERVER" \
   --arg netid "$VC_NET_ID" \
-  --arg adminPass "$VC_ADMIN_PASS"
-  --arg rootPass "$VC_ROOT_PASS" 
+  --arg adminPass "$VC_ADMIN_PASS" \
+  --arg rootPass "$VC_ROOT_PASS" \
   --arg dnsSearch "$VC_SEARCH_PATH" \
   --arg fqdn "$VC_FQDN" \
   --from-file filters \

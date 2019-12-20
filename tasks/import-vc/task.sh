@@ -24,7 +24,7 @@ cat > filters <<'EOF'
 .NetworkMapping[].Network = $network |
 .PowerOn = $powerOn |
 .IPAllocationPolicy = $ipallocation |
-(.PropertyMapping[] | select(.Key == "guestinfo.cis.appliance.net.addr.family")).Value = ipv4 |
+(.PropertyMapping[] | select(.Key == "guestinfo.cis.appliance.net.addr.family")).Value = "ipv4" |
 (.PropertyMapping[] | select(.Key == "guestinfo.cis.appliance.net.mode")).Value = $netmode |
 (.PropertyMapping[] | select(.Key == "guestinfo.cis.appliance.net.addr")).Value = $ip0 |
 (.PropertyMapping[] | select(.Key == "guestinfo.cis.appliance.net.prefix")).Value = $netmask0 |

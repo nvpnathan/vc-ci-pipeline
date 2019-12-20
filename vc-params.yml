@@ -9,7 +9,7 @@ vcenter_insecure: 1
 vcenter_ca_cert:
 vcenter_host: vlab-vcsa.vballin.com
 vcenter_usr: administrator@vsphere.local
-vcenter_pwd: ((vcenter-pass))
+vcenter_pwd: VMware1!
 vcenter_data_center: vlab-dc
 
 ## vc ova settings

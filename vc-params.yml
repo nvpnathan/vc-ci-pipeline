@@ -24,7 +24,7 @@ vc_domain_name: vlab-vcsa70.vballin.com
 vc_domain_search: vballin.com
 vc_dns_server: 192.168.64.60
 vc_ip_address: 192.168.64.80
-vc_netmask: 255.255.255.0
+vc_netmask: 24
 vc_network: vlab-mgmt        # VDS|VSS VM portgroup
 vc_gateway: 192.168.64.1
 vc_net_id: 192.168.64.80

@@ -54,7 +54,6 @@ jq \
   --arg rootPass "$VC_ROOT_PASS" 
   --arg dnsSearch "$VC_SEARCH_PATH" \
   --arg fqdn "$VC_FQDN" \
-
   --from-file filters \
   vc-import.json > options.json
 

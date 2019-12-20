@@ -39,17 +39,22 @@ EOF
 
 jq \
   --arg vmSize "$VC_DEPLOYMENT_SIZE" \
+  --arg vmName "$VC_NAME" \
+  --arg diskType "$VC_DISK_PROVISION" \
+  --arg network "$VC_PORTGROUP" \
+  --argjson powerOn "$VC_POWER_ON" \
   --arg ipallocation "$VC_IP_POLICY" \
+  --arp netmode "$VC_NET_MODE" \
   --arg ip0 "$VC_IP" \
   --arg netmask0 "$VC_NETMASK" \
   --arg gateway "$VC_GATEWAY" \
   --arg dns "$VC_DNS_SERVER" \
+  --arg netid "$VC_NET_ID" \
+  --arg adminPass "$VC_ADMIN_PASS"
+  --arg rootPass "$VC_ROOT_PASS" 
   --arg dnsSearch "$VC_SEARCH_PATH" \
-  --arg dnsDomain "$VC_DOMAIN_NAME" \
-  --arg network "$VC_PORTGROUP" \
-  --arg vmName "$VC_NAME" \
-  --arg diskType "$VC_DISK_PROVISION" \
-  --argjson powerOn "$VC_POWER_ON" \
+  --arg fqdn "$VC_FQDN" \
+
   --from-file filters \
   vc-import.json > options.json
 

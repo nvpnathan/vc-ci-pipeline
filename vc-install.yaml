@@ -38,7 +38,7 @@ resources:
 - name: vc-pipeline
   type: git
   source:
-    uri: https://github.com/nvpnathan/vc-pipeline.git
+    uri: https://github.com/nvpnathan/vc-ci-pipeline.git
     branch: ((vc_install_branch))
 
 - name: vc-ova

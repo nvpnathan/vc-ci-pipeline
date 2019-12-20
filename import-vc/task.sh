@@ -44,7 +44,7 @@ jq \
   --arg network "$VC_PORTGROUP" \
   --argjson powerOn "$VC_POWER_ON" \
   --arg ipallocation "$VC_IP_POLICY" \
-  --arp netmode "$VC_NET_MODE" \
+  --arg netmode "$VC_NET_MODE" \
   --arg ip0 "$VC_IP" \
   --arg netmask0 "$VC_NETMASK" \
   --arg gateway "$VC_GATEWAY" \

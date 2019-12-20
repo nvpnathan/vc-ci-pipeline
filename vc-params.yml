@@ -1,0 +1,35 @@
+vc_install_branch: master # use local_ova to use local nginx server with OVA's locally
+
+## webserver | ova filename
+ova_webserver: "http://nginx"
+vc_ova_file_name: "VMware-vCenter-Server-Appliance-7.0.0.10000-31749907_OVF10.ova"
+
+## vcenter settings
+vcenter_insecure: 1
+vcenter_ca_cert:
+vcenter_host: vlab-vcsa.vballin.com
+vcenter_usr: administrator@vsphere.local
+vcenter_pwd: ((vcenter-pass))
+vcenter_data_center: vlab-dc
+
+## vc ova settings
+vc_datastore: vlab-nfs-ds-01
+vc_resource_pool: /vlab-dc/host/vlab-mgmt-edge/Resources # /<vSphere-Datcenter/host/<vSphere-Cluster>/Resources/<vSphere-ResourcePool>
+vc_deploy_size: tiny      # xsmall | small | medium | large | xlarge
+vc_disk_provision: thin      # thin | thick
+vc_ip_policy: fixedPolicy    # fixedPolicy | DHCP
+vc_net_mode: static
+vc_name: vlab-vcsa70       # VM Name
+vc_domain_name: vlab-vcsa70.vballin.com
+vc_domain_search: vballin.com
+vc_dns_server: 192.168.64.60
+vc_ip_address: 192.168.64.80
+vc_netmask: 255.255.255.0
+vc_network: vlab-mgmt        # VDS|VSS VM portgroup
+vc_gateway: 192.168.64.1
+vc_net_id: 192.168.64.80
+vc_admin_pass: VMware1!
+vc_root_pass: VMware1!
+vc_fqdn: vlab-vcsa70.vballin.com
+vc_power_on: true
+#vc_vm_folder:

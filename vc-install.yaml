@@ -1,0 +1,62 @@
+vc-deploy-params: &vc-deploy-params
+  GOVC_INSECURE: ((vcenter_insecure))
+  GOVC_CA_CERT: ((vcenter_ca_cert))
+  GOVC_URL: ((vcenter_host))
+  GOVC_USERNAME: ((vcenter_usr))
+  GOVC_PASSWORD: ((vcenter_pwd))
+  GOVC_DATACENTER: ((vcenter_data_center))
+  GOVC_DATASTORE: ((vc_datastore))
+  GOVC_RESOURCE_POOL: ((vc_resource_pool))
+  VC_DEPLOYMENT_SIZE: ((vc_deploy_size))
+  VC_DISK_PROVISION: ((vc_disk_provision))
+  VC_IP_POLICY: ((vc_ip_policy))
+  VC_NET_MODE: ((vc_net_mode))
+  VC_NAME: ((vc_name))
+  VC_PORTGROUP: ((vc_network))
+  VC_GATEWAY: ((vc_gateway))
+  VC_DOMAIN_NAME: ((vc_domain_name))
+  VC_SEARCH_PATH: ((vc_domain_search))
+  VC_DNS_SERVER: ((vc_dns_server))
+  VC_IP: ((vc_ip_address))
+  VC_NETMASK: ((vc_netmask))
+  VC_NET_ID: ((vc_net_id))
+  VC_ADMIN_PASS: ((vc_admin_pass))
+  VC_ROOT_PASS: ((vc_root_pass))
+  VC_FQDN: ((vc_fqdn))
+  #VC_VM_FOLDER: ((vc_vm_folder))
+  VC_POWER_ON: ((vc_power_on))
+  VC_OVA: ((vc_ova_file_name))
+
+resource_types:
+- name: file-url
+  type: docker-image
+  source:
+    repository: pivotalservices/concourse-curl-resource
+    tag: latest
+
+resources:
+- name: vc-pipeline
+  type: git
+  source:
+    uri: https://github.com/nvpnathan/vc-pipeline.git
+    branch: ((vc_install_branch))
+
+- name: vc-ova
+  type: file-url
+  source:
+    url: ((ova_webserver))/((vc_ova_file_name))
+    filename: ((vc_ova_file_name))
+    skip_ssl_verification: true
+
+jobs:
+
+- name: deploy-vc
+  plan:
+  - in_parallel:
+    - get: vc-pipeline
+    - get: vc-ova
+  
+  - task: deploy
+    file: vc-pipeline/tasks/import-vc/task.yml
+    params: *vc-deploy-params
+

@@ -15,7 +15,7 @@ vcenter_data_center: vlab-dc
 ## vc ova settings
 vc_datastore: vlab-nfs-ds-01
 vc_resource_pool: /vlab-dc/host/vlab-mgmt/Resources # /<vSphere-Datcenter/host/<vSphere-Cluster>/Resources/<vSphere-ResourcePool>
-vc_deploy_size: tiny      # xsmall | small | medium | large | xlarge
+vc_deploy_size: tiny      # tiny | small | medium | large | xlarge | tiny-lstorage | medium-lstorage | large-lstorage | xlarge-lstorage | tiny-xlstroage | small-xlstorage | medium-xlstorage | xlarge-xlstorage
 vc_disk_provision: thin      # thin | thick
 vc_ip_policy: fixedPolicy    # fixedPolicy | DHCP
 vc_net_mode: static

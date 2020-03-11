@@ -2,7 +2,7 @@ vc_install_branch: master # use local_ova to use local nginx server with OVA's l
 
 ## webserver | ova filename
 ova_webserver: "http://nginx"
-vc_ova_file_name: "VMware-vCenter-Server-Appliance-7.0.0.10000-31749907_OVF10.ova"
+vc_ova_file_name: "VMware-vCenter-Server-Appliance-7.0.0.10000-34164592_OVF10.ova"
 
 ## vcenter settings
 vcenter_insecure: 1

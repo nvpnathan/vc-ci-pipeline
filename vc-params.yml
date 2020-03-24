@@ -2,7 +2,7 @@ vc_install_branch: master # use local_ova to use local nginx server with OVA's l
 
 ## webserver | ova filename
 ova_webserver: "http://nginx"
-vc_ova_file_name: "VMware-vCenter-Server-Appliance-7.0.0.10000-34164592_OVF10.ova"
+vc_ova_file_name: "VMware-vCenter-Server-Appliance-7.0.0.10100-15889662_OVF10.ova"
 
 ## vcenter settings
 vcenter_insecure: 1
@@ -24,7 +24,7 @@ vc_domain_name: vlab-vcsa70.vballin.com
 vc_domain_search: vballin.com
 vc_dns_server: 192.168.64.60
 vc_ip_address: 192.168.64.80
-vc_netmask: 24
+vc_netmask: 255.255.255.0
 vc_network: vlab-mgmt        # VDS|VSS VM portgroup
 vc_gateway: 192.168.64.1
 vc_net_id: 192.168.64.80

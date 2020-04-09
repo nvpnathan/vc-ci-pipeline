@@ -16,7 +16,7 @@ vc-deploy-params: &vc-deploy-params
   VC_PORTGROUP: ((vc_network)))
   VC_ROOT_PWD: ((vc_root_pass))
   VC_SSH_ENABLED: ((ssh_enabled))
-  VC_SSO_PWD: ((sso_pass))
+  VC_SSO_PWD: ((sso_password))
   VC_SSO_DOMAIN: ((sso_domain))
   CEIP_ENABLED: ((ceip_enabled))
   VC_ISO: ((vc_iso_file_name))

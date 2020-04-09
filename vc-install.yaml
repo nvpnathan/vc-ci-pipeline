@@ -1,31 +1,25 @@
 vc-deploy-params: &vc-deploy-params
-  GOVC_INSECURE: ((vcenter_insecure))
-  GOVC_CA_CERT: ((vcenter_ca_cert))
-  GOVC_URL: ((vcenter_host))
-  GOVC_USERNAME: ((vcenter_usr))
-  GOVC_PASSWORD: ((vcenter_pwd))
-  GOVC_DATACENTER: ((vcenter_data_center))
-  GOVC_DATASTORE: ((vc_datastore))
-  GOVC_RESOURCE_POOL: ((vc_resource_pool))
+  ESXI_HOST: ((esxi_host))
+  ESXI_USR: ((esxi_usr))
+  ESXI_PWD: ((esxi_pwd))
+  ESXI_DATASTORE: ((esxi_DATASTORE))
   VC_DEPLOYMENT_SIZE: ((vc_deploy_size))
-  VC_DISK_PROVISION: ((vc_disk_provision))
-  VC_IP_POLICY: ((vc_ip_policy))
+  VC_THIN_PROVISION: ((vc_thin_provision))
   VC_NET_MODE: ((vc_net_mode))
   VC_NAME: ((vc_name))
-  VC_PORTGROUP: ((vc_network))
-  VC_GATEWAY: ((vc_gateway))
-  VC_DOMAIN_NAME: ((vc_domain_name))
-  VC_SEARCH_PATH: ((vc_domain_search))
-  VC_DNS_SERVER: ((vc_dns_server))
+  VC_SYSTEM_NAME: ((vc_system_name)
   VC_IP: ((vc_ip_address))
-  VC_NETMASK: ((vc_netmask))
-  VC_NET_ID: ((vc_net_id))
-  VC_ADMIN_PASS: ((vc_admin_pass))
-  VC_ROOT_PASS: ((vc_root_pass))
-  VC_FQDN: ((vc_fqdn))
-  #VC_VM_FOLDER: ((vc_vm_folder))
-  VC_POWER_ON: ((vc_power_on))
-  VC_OVA: ((vc_ova_file_name))
+  VC_NETMASK: ((vc_prefix))
+  VC_DNS_SERVER: ((vc_dns_server))
+  VC_GATEWAY: ((vc_gateway))
+  VC_NTP_SERVER: ((vc_ntp_server))
+  VC_PORTGROUP: ((vc_network)))
+  VC_ROOT_PWD: ((vc_root_pass))
+  VC_SSH_ENABLED: ((ssh_enabled))
+  VC_SSO_PWD: ((vc_sso_pass))
+  VC_SSO_DOMAIN: ((sso_domain))
+  CEIP_ENABLED: ((ceip_enabled))
+  VC_ISO: ((vc_iso_file_name))
 
 resource_types:
 - name: file-url
@@ -44,8 +38,8 @@ resources:
 - name: vc-ova
   type: file-url
   source:
-    url: ((ova_webserver))/((vc_ova_file_name))
-    filename: ((vc_ova_file_name))
+    url: ((ova_webserver))/((vc_iso_file_name))
+    filename: ((vc_iso_file_name))
     skip_ssl_verification: true
 
 jobs:

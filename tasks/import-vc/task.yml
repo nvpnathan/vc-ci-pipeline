@@ -34,4 +34,4 @@ inputs:
   - name: vc-ova
 
 run:
-  path: vc-pipeline/tasks/import-vc/task.sh
+  path: vc-ci-pipeline/tasks/import-vc/task.sh

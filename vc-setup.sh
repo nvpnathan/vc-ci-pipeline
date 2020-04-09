@@ -7,7 +7,7 @@ PIPELINE_NAME=install-vcenter
 CONCOURSE_USER=nsx
 CONCOURSE_PW=vmware
 
-alias fly-s="fly -t $CONCOURSE_TARGET set-pipeline -p $PIPELINE_NAME -c ~/repos/vcenter-pipeline/pipelines/vc-install.yaml -l vc-params.yml"
+alias fly-s="fly -t $CONCOURSE_TARGET set-pipeline -p $PIPELINE_NAME -c ~/repos/vc-ci-pipeline/pipelines/vc-install.yaml -l vc-params.yml"
 alias fly-d="fly -t $CONCOURSE_TARGET destroy-pipeline -p $PIPELINE_NAME"
 alias fly-l="fly -t $CONCOURSE_TARGET containers | grep $PIPELINE_NAME"
 alias fly-h="fly -t $CONCOURSE_TARGET hijack -b "

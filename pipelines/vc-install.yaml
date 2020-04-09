@@ -2,7 +2,7 @@ vc-deploy-params: &vc-deploy-params
   ESXI_HOST: ((esxi_host))
   ESXI_USR: ((esxi_usr))
   ESXI_PWD: ((esxi_pwd))
-  ESXI_DATASTORE: ((esxi_DATASTORE))
+  ESXI_DATASTORE: ((esxi_datastore))
   VC_DEPLOYMENT_SIZE: ((vc_deploy_size))
   VC_THIN_PROVISION: ((vc_thin_provision))
   VC_NET_MODE: ((vc_net_mode))

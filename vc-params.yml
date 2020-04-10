@@ -2,28 +2,34 @@ vc_install_branch: master # use local_ova to use local nginx server with OVA's l
 
 ## webserver | ova filename
 ova_webserver: "http://nginx"
-vc_iso_file_name: "VMware-VCSA-all-7.0.0-15952498.iso"
+vc_ova_file_name: "VMware-vCenter-Server-Appliance-7.0.0.10100-15889662_OVF10.ova"
 
-## deploy to esxi settings
-esxi_host: vlab-esx-90.vballin.com
-esxi_usr: root
-esxi_pwd: VMware1!
-esxi_datastore: vlab-nfs-ds-01
+## vcenter settings
+vcenter_insecure: 1
+vcenter_ca_cert:
+vcenter_host: vlab-vcsa.vballin.com
+vcenter_usr: administrator@vsphere.local
+vcenter_pwd: VMware1!
+vcenter_data_center: vlab-dc
 
-## vc settings
+## vc ova settings
+vc_datastore: vlab-nfs-ds-01
+vc_resource_pool: /vlab-dc/host/vlab-mgmt/Resources # /<vSphere-Datcenter/host/<vSphere-Cluster>/Resources/<vSphere-ResourcePool>
 vc_deploy_size: tiny      # tiny | small | medium | large | xlarge | tiny-lstorage | medium-lstorage | large-lstorage | xlarge-lstorage | tiny-xlstroage | small-xlstorage | medium-xlstorage | xlarge-xlstorage
-vc_thin_provision: true      # true | false
+vc_disk_provision: thin      # thin | thick
+vc_ip_policy: fixedPolicy    # fixedPolicy | DHCP
 vc_net_mode: static
-vc_name: vlab-vcsa       # VM Name
-vc_system_name: vlab-vcsa.vballin.com
-vc_ip_address: 192.168.64.10
-vc_prefix: 24
+vc_name: vlab-vcsa70       # VM Name
+vc_domain_name: vlab-vcsa70.vballin.com
+vc_domain_search: vballin.com
 vc_dns_server: 192.168.64.60
+vc_ip_address: 192.168.64.80
+vc_netmask: 255.255.255.0
+vc_network: vlab-mgmt        # VDS|VSS VM portgroup
 vc_gateway: 192.168.64.1
-vc_ntp_server: 192.168.67.1
-vc_network: vcenter        # VDS|VSS VM portgroup
+vc_net_id: 192.168.64.80
+vc_admin_pass: VMware1!
 vc_root_pass: VMware1!
-ssh_enabled: true
-sso_password: VMware1!
-sso_domain: vsphere.local
-ceip_enabled: true 
+vc_fqdn: vlab-vcsa70.vballin.com
+vc_power_on: true
+#vc_vm_folder:

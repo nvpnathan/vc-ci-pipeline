@@ -47,7 +47,7 @@ jobs:
 - name: deploy-vc
   plan:
   - in_parallel:
-    - get: vc-pipeline
+    - get: vc-ci-pipeline
     - get: vc-ova
   
   - task: deploy
